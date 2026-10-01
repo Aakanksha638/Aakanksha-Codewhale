@@ -267,7 +267,7 @@ fn compact_subagent_tool_result_for_context(
     let mut lossy = snapshots.len() > SUBAGENT_SNAPSHOTS_SHOWN;
     let mut out = String::from("[sub-agent result summarized for parent context]\n");
     out.push_str(
-        "Child results are self-reports; verify side effects with `File` actions like `read` or `list` before claiming success.\n",
+        "Child results are self-reports; verify side effects with `read` or `list_dir` before claiming success; use `tool_search` to activate deferred tools when needed.\n",
     );
     out.push_str("Use `handle_read` on `transcript_handle` for bounded transcript slices when the returned summary is not enough.\n");
     for (idx, snapshot) in snapshots.iter().enumerate() {
